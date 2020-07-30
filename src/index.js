@@ -21,11 +21,11 @@ app.get('/user/:id', (req,res)=>{
 })
 
 app.delete('/user/:id', (req,res)=> {
-  if(req.params.id === 0){
-    res.status(202).json({id:0})
+  if (req.params.id == Object.keys(Users)){
+    res.status(202).send()
     Users = [];
-  }else {
-    res.status(204)
+  } else {
+    res.status(204).send()
   }
 })
 
