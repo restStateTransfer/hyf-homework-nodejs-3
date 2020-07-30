@@ -21,10 +21,10 @@ app.get('/user/:id', (req,res)=>{
 })
 
 app.delete('/user/:id', (req,res)=> {
-  if(id === 0){
+  if(req.params.id === 0){
     res.status(200).json([])
   }else {
-    res.status(204).json('User not found')
+    res.status(204)
   }
 })
 
