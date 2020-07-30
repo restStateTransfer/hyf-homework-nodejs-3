@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const Users = []
+let Users = []
 
 app.get('/', (req, res)=> {
   res.json('Hello World!')
@@ -22,7 +22,8 @@ app.get('/user/:id', (req,res)=>{
 
 app.delete('/user/:id', (req,res)=> {
   if(req.params.id === 0){
-    res.status(200).json([])
+    res.status(202).json({id:0})
+    Users = [];
   }else {
     res.status(204)
   }
