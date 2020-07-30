@@ -20,4 +20,12 @@ app.get('/user/:id', (req,res)=>{
   res.json({id: 0})
 })
 
+app.delete('/user/:id', (req,res)=> {
+  if(id === 0){
+    res.status(200).json([])
+  }else {
+    res.status(204).json('User not found')
+  }
+})
+
 app.listen(3000, ()=> console.log('Server is running on 3000'))
